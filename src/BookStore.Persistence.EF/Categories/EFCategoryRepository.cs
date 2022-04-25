@@ -21,6 +21,11 @@ namespace BookStore.Persistence.EF.Categories
             _dataContext.Categories.Add(category);
         }
 
+        public Category FindById(int id)
+        {
+            return _dataContext.Categories.Find(id);
+        }
+
         public IList<GetCategoryDto> GetAll()
         {
             return _dataContext.Categories

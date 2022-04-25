@@ -1,11 +1,8 @@
 ﻿using BookStore.Entities;
 using BookStore.Infrastructure.Application;
 using BookStore.Services.Categories.Contracts;
-using System;
+using BookStore.Services.Categories.Exceptions;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookStore.Services.Categories
 {
@@ -21,6 +18,7 @@ namespace BookStore.Services.Categories
             _repository = repository;
             _unitOfWork = unitOfWork;
         }
+
         public void Add(AddCategoryDto dto)
         {
             var category = new Category
@@ -36,6 +34,25 @@ namespace BookStore.Services.Categories
         public IList<GetCategoryDto> GetAll()
         {
             return _repository.GetAll();
+        }
+
+        public void Update(int id, UpdateCategoryDto dto)
+        {
+            var category = _repository.FindById(id);
+            
+            PreventUpdateWhenCategoryWithGivenIdDoesNotExist(category);
+
+            category.Title = dto.Title;
+
+            _unitOfWork.Commit();
+        }
+
+        private static void PreventUpdateWhenCategoryWithGivenIdDoesNotExist(Category category)
+        {
+            if (category == null)
+            {
+                throw new CategoryNotFoundException();
+            }
         }
     }
 }

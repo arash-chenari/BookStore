@@ -5,6 +5,7 @@ using BookStore.Persistence.EF;
 using BookStore.Persistence.EF.Categories;
 using BookStore.Services.Categories;
 using BookStore.Services.Categories.Contracts;
+using BookStore.Services.Categories.Exceptions;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,48 @@ namespace BookStore.Services.Test.Unit.Categories
             expected.Should().Contain(_ => _.Title == "dummy1");
             expected.Should().Contain(_ => _.Title == "dummy2");
             expected.Should().Contain(_ => _.Title == "dummy3");
+        }
+
+        [Fact]
+        public void Update_updates_category_properly()
+        {
+            var category = CreateCategory();
+            var dto = GenerateUpdateCategoryDto("editedDummy");
+
+            _sut.Update(category.Id, dto);
+
+            var expected = _dataContext.Categories
+                .FirstOrDefault(_ => _.Id == category.Id);
+            expected.Title.Should().Be(dto.Title);
+        }
+
+        [Fact]
+        public void Update_throw_CategoryNotFoundException_when_category_with_given_id_is_not_exist()
+        {
+            var dummyCategoryId = 1000;
+            var dto = GenerateUpdateCategoryDto("EditedDummy");
+            
+            Action expected =()=> _sut.Update(dummyCategoryId, dto);
+
+            expected.Should().ThrowExactly<CategoryNotFoundException>();
+        }
+
+        private static UpdateCategoryDto GenerateUpdateCategoryDto(string title)
+        {
+            return new UpdateCategoryDto
+            {
+                Title = title,
+            };
+        }
+
+        private Category CreateCategory()
+        {
+            var category = new Category
+            {
+                Title = "dummy"
+            };
+            _dataContext.Manipulate(_ => _.Categories.Add(category));
+            return category;
         }
 
         private void CreateCategoriesInDataBase()
