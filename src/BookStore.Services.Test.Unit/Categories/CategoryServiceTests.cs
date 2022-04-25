@@ -6,6 +6,7 @@ using BookStore.Persistence.EF.Categories;
 using BookStore.Services.Categories;
 using BookStore.Services.Categories.Contracts;
 using BookStore.Services.Categories.Exceptions;
+using BookStore.Test.Tools.categories;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,9 @@ namespace BookStore.Services.Test.Unit.Categories
         [Fact]
         public void Update_updates_category_properly()
         {
-            var category = CreateCategory();
+            var category = CategoryFactory.CreateCategory("Dummy");
+            _dataContext.Manipulate(_ => _.Categories.Add(category));
+            
             var dto = GenerateUpdateCategoryDto("editedDummy");
 
             _sut.Update(category.Id, dto);
@@ -87,16 +90,6 @@ namespace BookStore.Services.Test.Unit.Categories
             {
                 Title = title,
             };
-        }
-
-        private Category CreateCategory()
-        {
-            var category = new Category
-            {
-                Title = "dummy"
-            };
-            _dataContext.Manipulate(_ => _.Categories.Add(category));
-            return category;
         }
 
         private void CreateCategoriesInDataBase()

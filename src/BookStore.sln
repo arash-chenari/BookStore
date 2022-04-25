@@ -9,17 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{311FEBF5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Entities", "BookStore.Entities\BookStore.Entities.csproj", "{5BA743E7-9EB9-4951-BB3F-6F926E8417B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Migrations", "BookStore.Migrations\BookStore.Migrations.csproj", "{91BED422-A1C5-4A68-BADE-519F67D32424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Migrations", "BookStore.Migrations\BookStore.Migrations.csproj", "{91BED422-A1C5-4A68-BADE-519F67D32424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Infrastructure", "BookStore.Infrastructure\BookStore.Infrastructure.csproj", "{913E20C2-DD51-4FBC-9A29-568D8FABC4FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Infrastructure", "BookStore.Infrastructure\BookStore.Infrastructure.csproj", "{913E20C2-DD51-4FBC-9A29-568D8FABC4FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Persistence.EF", "BookStore.Persistence.EF\BookStore.Persistence.EF.csproj", "{F8D3CBB9-2505-412B-B08A-FFC8D0D98BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Persistence.EF", "BookStore.Persistence.EF\BookStore.Persistence.EF.csproj", "{F8D3CBB9-2505-412B-B08A-FFC8D0D98BA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services", "BookStore.Services\BookStore.Services.csproj", "{28F2D3AE-3BBD-437B-9CAC-E53BDEA532C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services", "BookStore.Services\BookStore.Services.csproj", "{28F2D3AE-3BBD-437B-9CAC-E53BDEA532C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.RestAPI", "BookStore.RestAPI\BookStore.RestAPI.csproj", "{9EFB3AD8-E2B8-42D9-A8A8-686A554BBDFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.RestAPI", "BookStore.RestAPI\BookStore.RestAPI.csproj", "{9EFB3AD8-E2B8-42D9-A8A8-686A554BBDFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.Test.Unit", "BookStore.Services.Test.Unit\BookStore.Services.Test.Unit.csproj", "{893411EC-F189-4A78-865A-F8599A4A98D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.Test.Unit", "BookStore.Services.Test.Unit\BookStore.Services.Test.Unit.csproj", "{893411EC-F189-4A78-865A-F8599A4A98D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Test.Tools", "BookStore.Test.Tools\BookStore.Test.Tools.csproj", "{7A827F7F-DFA1-45A3-977B-A78353D58503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{893411EC-F189-4A78-865A-F8599A4A98D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893411EC-F189-4A78-865A-F8599A4A98D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893411EC-F189-4A78-865A-F8599A4A98D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A827F7F-DFA1-45A3-977B-A78353D58503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A827F7F-DFA1-45A3-977B-A78353D58503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A827F7F-DFA1-45A3-977B-A78353D58503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A827F7F-DFA1-45A3-977B-A78353D58503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{28F2D3AE-3BBD-437B-9CAC-E53BDEA532C7} = {30442011-98B4-4C2B-A562-9442AD9A9A45}
 		{9EFB3AD8-E2B8-42D9-A8A8-686A554BBDFA} = {30442011-98B4-4C2B-A562-9442AD9A9A45}
 		{893411EC-F189-4A78-865A-F8599A4A98D2} = {311FEBF5-3E5C-421D-AF4F-9913F87F7E1A}
+		{7A827F7F-DFA1-45A3-977B-A78353D58503} = {311FEBF5-3E5C-421D-AF4F-9913F87F7E1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E34AB227-A734-48C1-8B5A-F48DBE73BC7C}

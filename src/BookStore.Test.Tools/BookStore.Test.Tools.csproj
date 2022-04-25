@@ -6,11 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookStore.Entities\BookStore.Entities.csproj" />
-    <ProjectReference Include="..\BookStore.Infrastructure\BookStore.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Books\Exceptions\" />
   </ItemGroup>
 
 </Project>

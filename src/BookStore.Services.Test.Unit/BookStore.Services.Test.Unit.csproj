@@ -25,6 +25,7 @@
     <ProjectReference Include="..\BookStore.Infrastructure\BookStore.Infrastructure.csproj" />
     <ProjectReference Include="..\BookStore.Persistence.EF\BookStore.Persistence.EF.csproj" />
     <ProjectReference Include="..\BookStore.Services\BookStore.Services.csproj" />
+    <ProjectReference Include="..\BookStore.Test.Tools\BookStore.Test.Tools.csproj" />
   </ItemGroup>
 
 </Project>
