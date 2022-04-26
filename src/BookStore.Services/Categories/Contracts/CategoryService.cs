@@ -12,5 +12,6 @@ namespace BookStore.Services.Categories.Contracts
         void Add(AddCategoryDto dto);
         IList<GetCategoryDto> GetAll();
         void Update(int id, UpdateCategoryDto dto);
+        void Delete(int id);
     }
 }

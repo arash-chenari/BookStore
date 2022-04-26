@@ -41,7 +41,7 @@ namespace BookStore.Services.Categories
 
         public IList<GetCategoryDto> GetAll()
         {
-            return _repository.GetAll();
+          return _repository.GetAll();
         }
 
         public void Update(int id, UpdateCategoryDto dto)
@@ -62,5 +62,19 @@ namespace BookStore.Services.Categories
                 throw new CategoryNotFoundException();
             }
         }
+
+        public void Delete(int id)
+        {
+            var category = _repository.FindById(id);
+            if(category == null)
+            {
+                throw new CategoryNotFoundException();
+            }
+
+            _repository.Delete(category);
+            _unitOfWork.Commit();
+        }
+
+
     }
 }

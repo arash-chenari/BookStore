@@ -21,6 +21,11 @@ namespace BookStore.Persistence.EF.Categories
             _dataContext.Categories.Add(category);
         }
 
+        public void Delete(Category category)
+        {
+            _dataContext.Categories.Remove(category);
+        }
+
         public Category FindById(int id)
         {
             return _dataContext.Categories.Find(id);
