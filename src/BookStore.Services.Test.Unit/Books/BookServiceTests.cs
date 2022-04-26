@@ -1,4 +1,5 @@
-﻿using BookStore.Infrastructure.Application;
+﻿using BookStore.Entities;
+using BookStore.Infrastructure.Application;
 using BookStore.Infrastructure.Test;
 using BookStore.Persistence.EF;
 using BookStore.Persistence.EF.Books;
@@ -51,6 +52,11 @@ namespace BookStore.Services.Test.Unit.Books
             expected.Pages.Should().Be(dto.Pages);
         }
 
+        [Fact]
+        public void Update_updates_book_properly()
+        {
+        }
+
         private static AddBookDto GenerateAddCategoryDto(Entities.Category category)
         {
             return new AddBookDto
@@ -63,5 +69,4 @@ namespace BookStore.Services.Test.Unit.Books
             };
         }
     }
-
 }
